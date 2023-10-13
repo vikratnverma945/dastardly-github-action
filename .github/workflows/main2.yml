@@ -1,4 +1,4 @@
-name: 'Dastardly Scan Action'
+name: 'Copy result'
 
 on:
   workflow_dispatch: # This specifies that the workflow can be manually triggered.
@@ -12,4 +12,4 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: dastardly-report
-          path: ./dastardly-report.html
+          path: /github/workspace/dastardly-report.html
