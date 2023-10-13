@@ -1,5 +1,18 @@
-steps:
-  - name: Run Dastardly Action Step
-    uses: PortSwigger/dastardly-github-action@main
-    with:
-      target-url: 'https://ginandjuice.shop'
+name: 'Dastardly Scan Action'
+
+on: 
+  workflow_dispatch: # This specifies that the workflow can be manually triggered.
+
+jobs:
+  dastardly_scan:
+    name: Run Dastardly Action Job
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2  # This step checks out your code from the repository.
+
+      - name: Run Dastardly Action Step
+        uses: PortSwigger/dastardly-github-action@main
+        with:
+          target-url: 'https://app.goldeneggs.info/'
