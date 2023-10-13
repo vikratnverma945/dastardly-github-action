@@ -1,0 +1,15 @@
+name: 'Dastardly Scan Action'
+
+on:
+  workflow_dispatch: # This specifies that the workflow can be manually triggered.
+
+jobs:
+  dastardly_scan:
+    name: Run Dastardly Action Job
+    runs-on: ubuntu-latest
+    steps:
+      - name: Upload Report as Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: dastardly-report
+          path: ./dastardly-report.html
